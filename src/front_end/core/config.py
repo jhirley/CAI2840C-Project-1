@@ -10,10 +10,11 @@ load_dotenv(dotenv_path=env_path)
 class Settings:
     PROJECT_NAME: str = "Project Board"
     PROJECT_VERSION: str = "1.0.0"
-    NAVBAR: dict = {"Title":"Project Board",
-             "Links":[{"href":"/","title":"Home"},
+    NAVBAR: dict = {"Title":"Project CAI 2840C",
+             "Links":[{"href":"/","title":"Dashboard"},
                       {"href":"/usecase1","title":"Use Case 1"},
-                      {"href":"/about","title":"About"}]}
+                      {"href":"/about","title":"About"}
+                      ]}
 
     # Postgres Environment Variables
 

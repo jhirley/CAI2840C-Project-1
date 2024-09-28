@@ -8,13 +8,22 @@ from src.front_end.routers.base import api_router as web_app_router
 
 # app = FastAPI()
 
+# need to redo this with sqlitedb
+# def create_tables():
+#     print("create_tables")
+#     Base.metadata.create_all(bind=engine)
+
 
 def include_router(app):
     app.include_router(web_app_router)
 
 
 def configure_static(app):  # new
-    app.mount("/src/front_end/static", StaticFiles(directory="src/front_end/static"), name="static")
+    app.mount(
+        "/src/front_end/static",
+        StaticFiles(directory="src/front_end/static"),
+        name="static",
+    )
 
 
 def start_application():
@@ -23,6 +32,7 @@ def start_application():
     include_router(app)
     configure_static(app)
     return app
+
 
 # @app.get("/")
 # async def root():

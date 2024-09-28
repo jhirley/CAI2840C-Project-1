@@ -4,6 +4,8 @@
 from fastapi import APIRouter, Depends, Request
 from fastapi.templating import Jinja2Templates
 from starlette.responses import RedirectResponse
+
+from src.front_end.core.config import settings
 # from sqlalchemy.orm import Session
 
 templates = Jinja2Templates(directory="src/front_end/templates")
@@ -15,8 +17,8 @@ router = APIRouter(include_in_schema=False)
 async def home(request: Request):
     # jobs = list_jobs(db=db)
     return templates.TemplateResponse(
-#         # "general_pages/dashboard.html", {"request": request, "jobs": jobs}
-        "general_pages/dashboard.html", {"request": request}
+        "general_pages/dashboard.html", {"request": request, "branding": settings.NAVBAR, "active" : "Dashboard"}   
+        # "general_pages/dashboard.html", {"request": request}
     )
 
 @router.get("/details/{id}")             #new
@@ -27,6 +29,6 @@ async def job_detail(id:int,request: Request):
         "jobs/detail.html", {"request": request}
     )
 
-@router.get("/{full_path:path}")
-async def catch_all(request: Request, full_path: str):
-    return RedirectResponse(url="/")
+# @router.get("/{full_path:path}")
+# async def catch_all(request: Request, full_path: str):
+#     return RedirectResponse(url="/")
