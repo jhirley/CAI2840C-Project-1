@@ -1,0 +1,9 @@
+venv
+venv/
+*.nosync
+venv.nosync
+venv.nosync/
+.venv
+.venv/
+__pycache__
+__pycache__/
