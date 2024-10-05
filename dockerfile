@@ -21,11 +21,11 @@ CMD ["python3", "main.py"]
 # docker build -t python-app .
 
 # run the docker container
-# docker run -d -p 8000:8001 python-app
-# docker run -p 8000:8001 python-app
+# docker run -d -p 8001:8001 python-app
+# docker run -p 8001:8001 python-app
 
 # run and delete after running
-# docker run --rm -p 8000:8001 python-app
+# docker run --rm -p 8001:8001 python-app
 
 # docker ps -a | grep python-app
 # docker stop <container_id>
