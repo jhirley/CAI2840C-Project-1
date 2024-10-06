@@ -5,8 +5,9 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Copy the current directory's content into the container's /app directory
-COPY main.py requirements.txt /app/
-COPY src/ /app/src/
+#COPY main.py requirements.txt /app/
+#COPY src/ /app/src/
+COPY . /app
 
 # Install any required packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt

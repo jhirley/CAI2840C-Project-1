@@ -7,11 +7,13 @@ services:
       - "8001:8001"
     # extra_hosts:
     #   - "host.docker.internal:host-gateway"
-    networks:
-      dnet:
+    volumes:
+      - .:/app  # Mount local directory to /app inside the container, optional
+#    networks:
+#      dnet:
 
-networks:  
-  dnet:  
-    driver: bridge  
+#networks:  
+#  dnet:  
+#    driver: bridge  
     # redis:
       # image: "redis:alpine"
