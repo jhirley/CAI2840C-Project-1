@@ -9,3 +9,6 @@ aiofiles
 
 #for loading environment variables  #new
 python-dotenv
+
+#open cv2
+opencv-python
